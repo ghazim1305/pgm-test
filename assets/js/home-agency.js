@@ -27,21 +27,6 @@ window.addEventListener('resize', () => {
   }
 });
 
-const tickerTrack = document.querySelector('.ticker-track');
-if (tickerTrack && !tickerTrack.dataset.marqueeReady) {
-  const group = document.createElement('div');
-  group.className = 'ticker-group';
-
-  while (tickerTrack.firstChild) {
-    group.appendChild(tickerTrack.firstChild);
-  }
-
-  const duplicate = group.cloneNode(true);
-  duplicate.setAttribute('aria-hidden', 'true');
-  tickerTrack.append(group, duplicate);
-  tickerTrack.dataset.marqueeReady = 'true';
-}
-
 const whatsappFloat = document.querySelector('.whatsapp-float');
 if (whatsappFloat) {
   const updateWhatsappVisibility = () => {
