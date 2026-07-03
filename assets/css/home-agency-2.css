@@ -1,13 +1,6 @@
-.ticker{background:var(--navy);color:#fff;padding:0;overflow:hidden;position:relative}
-.ticker::before,.ticker::after{content:"";position:absolute;top:0;bottom:0;width:72px;z-index:2;pointer-events:none}
-.ticker::before{left:0;background:linear-gradient(90deg,var(--navy),transparent)}
-.ticker::after{right:0;background:linear-gradient(270deg,var(--navy),transparent)}
-.ticker-track{display:flex;width:max-content;min-width:100%;will-change:transform;animation:ticker-scroll 28s linear infinite}
-.ticker-group{display:flex;align-items:center;gap:18px;flex-shrink:0;padding:16px 18px 16px 0;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
-.ticker-group span{display:inline-block}
-.ticker-group i{width:6px;height:6px;border-radius:50%;background:var(--green);flex:0 0 6px}
-.ticker:hover .ticker-track,.ticker:focus-within .ticker-track{animation-play-state:paused}
-@keyframes ticker-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker{background:var(--navy);color:#fff;padding:15px 0;overflow:hidden}
+.ticker-track{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;padding:0 20px;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.ticker-track i{width:6px;height:6px;border-radius:50%;background:var(--green)}
 
 .proof-section{padding:76px 0;background:#fff}
 .proof-grid{display:grid;grid-template-columns:1.8fr repeat(3,.65fr);align-items:stretch;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -47,14 +40,3 @@
 .services-bottom{display:flex;align-items:center;justify-content:space-between;gap:25px;margin-top:25px;padding:22px 0 0;border-top:1px solid var(--line)}
 .services-bottom p{margin:0;color:var(--muted);font-size:14px}
 .text-link{font-weight:850;color:var(--green-dark);white-space:nowrap}
-
-@media(max-width:820px){
-  .ticker-track{animation-duration:22s}
-  .ticker-group{padding-top:14px;padding-bottom:14px;font-size:12px;gap:15px}
-  .ticker::before,.ticker::after{width:34px}
-}
-
-@media(prefers-reduced-motion:reduce){
-  .ticker-track{animation:none;transform:none}
-  .ticker{overflow-x:auto}
-}
